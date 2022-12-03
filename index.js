@@ -3,7 +3,7 @@ import njk from './njk.js';
 const BOTTOM_Y = 1;
 const TOP_Y = BOTTOM_Y + 1.5;
 const ROTATION = 45;
-const SCREEN_WIDTH = 3;
+const SCREEN_WIDTH = 5;
 const SCREEN_HEIGHT = 1.5;
 const Z_OFFSET = -3.5
 const X_OFFSET = SCREEN_WIDTH/2;
