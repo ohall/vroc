@@ -1,3 +1,12 @@
 {% for chart in charts %}
-    <a-image src="#{{chart.src}}" width="{{common.width}}" height="{{common.height}}" material="" geometry="" visible="" position="{{chart.x}} {{chart.y}} {{chart.z}}" rotation="0 {{chart.rotation}} 0"></a-image>
+<a-entity mixin="frame" class="raycastable menu-button"
+    position="{{chart.x}} {{chart.y}} {{chart.z}}"
+    rotation="0 {{chart.rotation}} 0">
+    <a-image
+     src="#{{chart.src}}"
+     width="{{common.width}}"
+     height="{{common.height}}"
+     mixin="screen"
+    ></a-image>
+</a-entity>
 {% endfor %}
