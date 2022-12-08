@@ -5,7 +5,9 @@
     <title>VROC</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script type="module" src="highlight.js"></script>
+    <script type="module" src="info-panel.js"></script>
     <script type="module" src="index.js"></script>
 </head>
 <body>
@@ -21,6 +23,7 @@
         <img id="5" src="imgs/5.png">
         <img id="6" src="imgs/6.png">
         <img id="keyboard" src="imgs/keyboard.png">
+<!--        <img id="zoom" src="imgs/zoom-meeting.gif">-->
         <a-mixin
                 id="frame"
                 geometry="primitive: plane; width: 0.5783552; height: 0.8192"
@@ -62,10 +65,30 @@
     <a-entity id="ops-displays"
               highlight
               animation="property: position; from: 0 2 -2; to:0 0 0; dur: 1000; easing: easeInQuad;"></a-entity>
-    <a-image src="#keyboard" material="" geometry=""
-             animation="property: position; from: 0 -2 2; to:0 0.41 -2.5; dur: 1500; easing: easeInQuad;"
-             position="0 0.41 -2.5" rotation="-75 0 0" scale="2 2 2"></a-image>
-<!--    <a-entity environment="preset: default"></a-entity>-->
+
+    <a-image src="#keyboard" material="" geometry="" draggable="true" cursor
+             animation="property: position; from: 0 -2 2; to: 0 0.41 -1.5; dur: 1500; easing: easeInQuad;"
+             position="0 0.41 -2.5" rotation="-75 0 0" scale="1 1 1"></a-image>
+
+    <a-entity
+        position="-0.02 2.8 -1.8"
+        geometry="primitive: plane; width: 2.0; height: 1"
+        animation="property: position; from: 0 -2 2; to:0 0.41 -2.5; dur: 1500; easing: easeInQuad;"
+        material="shader: gif; src: url(imgs/zoom-meeting.gif)"
+        rotation="-20 0 0" scale="1.2 1.0 1">
+    </a-entity>
+
+    <a-entity
+            id="infoPanel"
+            position="0 0 0.5"
+            info-panel
+            visible="false"
+            scale="0.001 0.001 0.001"
+            geometry="primitive: plane; width: 1.5; height: 1.8"
+            material="color: #333333; shader: flat; transparent: false" class="raycastable">
+        <a-entity id="opsImg" mixin="screen" material="src: #6" visible="false"></a-entity>
+    </a-entity>
+
 </a-scene>
 </body>
 </html>
