@@ -9,10 +9,6 @@
     <script type="module" src="highlight.js"></script>
     <script type="module" src="info-panel.js"></script>
     <script type="module" src="index.js"></script>
-    <script src="https://unpkg.com/aframe-click-drag-component"></script>
-    <script>
-        registerAframeClickDragComponent(window.AFRAME);
-    </script>
 </head>
 <body>
 <a-scene
@@ -70,7 +66,7 @@
               highlight
               animation="property: position; from: 0 2 -2; to:0 0 0; dur: 1000; easing: easeInQuad;"></a-entity>
 
-    <a-image src="#keyboard" material="" geometry="" click-drag
+    <a-image src="#keyboard" material="" geometry=""
              animation="property: position; from: 0 -2 2; to: 0 0.41 -1.5; dur: 1500; easing: easeInQuad;"
              position="0 0.41 -2.5" rotation="-75 0 0" scale="1 1 1"></a-image>
 
