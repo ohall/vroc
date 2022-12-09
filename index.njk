@@ -1,13 +1,12 @@
 {% for chart in charts %}
-<a-entity mixin="frame" class="raycastable menu-button"
-    position="{{chart.x}} {{chart.y}} {{chart.z}}"
-    rotation="0 {{chart.rotation}} 0">
-    <a-image
-     id="#{{chart.id}}"
-     src="#{{chart.src}}"
-     width="{{common.width}}"
-     height="{{common.height}}"
-     mixin="screen"
-    ></a-image>
-</a-entity>
+<a-curvedimage
+ id="#{{chart.id}}"
+ src="#{{chart.src}}"
+ width="{{common.width}}"
+ height="{{common.height}}"
+ mixin="frame" class="raycastable menu-button"
+ position="{{chart.x}} {{chart.y}} {{chart.z}}"
+ geometry="primitive: cylinder;  height:  {{common.height}};  openEnded:  true;  radius:  4; thetaLength: 60; thetaStart:150"
+ rotation="0 {{chart.rotation}} 0"
+></a-curvedimage>
 {% endfor %}
